@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class CansUndirectedGraphProblem implements Problem {
-    CansState initialState = new CansState("(14,1)");
-    CansState finalState = new CansState("(10,5)");
+    CansState initialState = new CansState("(14,4)");
+    CansState finalState = new CansState("(10,2)");
 
     @Override
     public Object getInitialState() {
@@ -50,11 +50,12 @@ public class CansUndirectedGraphProblem implements Problem {
         int aVol = Integer.parseInt(volsArray[0].substring(1));
         int bVol = Integer.parseInt(volsArray[1].substring(0, volsArray[1].length() - 1));
         switch (action.charAt(0)) {
+            // filling conditions depending on how much liquid is left in b (or a)
             case 'A':
                 if (action.charAt(7) == 'B') {
                     int aIntoBVol = Math.min(Math.max(CansState.bCap - bVol, 0), aVol);
                     aVol -= aIntoBVol;
-                    bVol = Math.min(CansState.bCap, bVol + aIntoBVol);
+                    bVol += aIntoBVol;
                 } else {
                     aVol = 0;
                 }
@@ -63,7 +64,7 @@ public class CansUndirectedGraphProblem implements Problem {
                 if (action.charAt(7) == 'A') {
                     int bIntoAVol = Math.min(Math.max(CansState.aCap - aVol, 0), bVol);
                     bVol -= bIntoAVol;
-                    aVol = Math.min(CansState.aCap, aVol + bIntoAVol);
+                    aVol += bIntoAVol;
                 } else {
                     bVol = 0;
                 }

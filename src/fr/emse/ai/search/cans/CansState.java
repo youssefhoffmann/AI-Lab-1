@@ -4,7 +4,7 @@ public class CansState {
     public String value;
 
     public static final int aCap = 15;
-    public static final int bCap = 5;
+    public static final int bCap = 2;
 
     public CansState(String value) {
         this.value = value;

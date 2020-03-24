@@ -9,7 +9,6 @@ public class CansTest {
     public static void main(String[] args) {
         CansUndirectedGraphProblem fp = new CansUndirectedGraphProblem();
         System.out.println("Solving the problem using ...");
-        System.out.println(new DepthFirstGraphSearch().solve(fp).pathToString());
-
+        System.out.println(new BreadthFirstGraphSearch().solve(fp).pathToString());
     }
 }
