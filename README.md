@@ -13,8 +13,8 @@ Solver contains the search algorithms ready to use : Depthfirst and Breadthfirst
 
 Simple contains a simple graph and tree example explained in the link above.
 
-exo5 corresponds to the first problem : The farmer's problem.
+  the first problem is The farmer's problem.
 
-exo6 corresponds to the second problem : The cannibal's problem.
+  the second problem is The missionaries and cannibals problem.
 
-exo7 corresponds to the third problem : The two cans' problem.
+the third problem  is The two cans' problem.
